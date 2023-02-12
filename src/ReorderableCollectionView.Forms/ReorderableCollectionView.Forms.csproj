@@ -12,8 +12,8 @@
     <Description>ReorderableCollectionView for Xamarin.Forms</Description>
     <Copyright>Copyright 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/billvenhaus/ReorderableCollectionView.Forms</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/billvenhaus/ReorderableCollectionView.Forms</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/VictorKochetkov/ReorderableCollectionView.Forms</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VictorKochetkov/ReorderableCollectionView.Forms</RepositoryUrl>
     <PackageTags>xamarin forms reorderablecollectionview collectionview xamarinforms reorderablecollectionview.forms xamarin.forms.collectionview</PackageTags>
   </PropertyGroup>  
   
