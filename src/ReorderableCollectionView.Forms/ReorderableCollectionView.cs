@@ -26,7 +26,8 @@ namespace ReorderableCollectionView.Forms
 			set { SetValue(CanReorderItemsProperty, value); }
 		}
 
-		public event EventHandler ReorderCompleted;
+        public event EventHandler ReorderStarted;
+        public event EventHandler ReorderCompleted;
 
 		void HandleCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
@@ -111,7 +112,10 @@ namespace ReorderableCollectionView.Forms
 			base.OnPropertyChanged(propertyName);
 		}
 
-		[EditorBrowsable(EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public void SendReorderStarted() => ReorderStarted?.Invoke(this, EventArgs.Empty);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
 		public void SendReorderCompleted() => ReorderCompleted?.Invoke(this, EventArgs.Empty);
 	}
 }
