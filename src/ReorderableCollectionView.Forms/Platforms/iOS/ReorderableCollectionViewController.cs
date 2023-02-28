@@ -85,7 +85,7 @@ namespace ReorderableCollectionView.Forms
 
                     // Drag anchor always should in the middle of cell
                     // So we need to fix it with offset
-                    _dragOffsetX = (collectionView.CellForItem(indexPath).Frame.Width / 2) - location.X;
+                    _dragOffsetX = (collectionView.CellForItem(indexPath).Frame.Width / 2);
 
                     ItemsView?.SendReorderStarted();
 
@@ -93,7 +93,7 @@ namespace ReorderableCollectionView.Forms
                 case UIGestureRecognizerState.Changed:
                     gestureRecognizer.CancelsTouchesInView = true;
 
-                    location.X += _dragOffsetX;
+                    location.X = _dragOffsetX;
                     collectionView.UpdateInteractiveMovement(location);
 
                     break;
