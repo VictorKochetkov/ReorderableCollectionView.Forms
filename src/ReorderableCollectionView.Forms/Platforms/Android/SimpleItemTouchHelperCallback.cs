@@ -35,7 +35,7 @@ namespace ReorderableCollectionView.Forms
                 return MakeMovementFlags(0, 0);
             }
 
-            var dragFlags = ItemTouchHelper.Up | ItemTouchHelper.Down | ItemTouchHelper.Left | ItemTouchHelper.Right;
+            var dragFlags = ItemTouchHelper.Up | ItemTouchHelper.Down;
             return MakeMovementFlags(dragFlags, 0);
         }
 
