@@ -83,7 +83,6 @@ namespace ReorderableCollectionView.Forms
                     NotifyItemMoved(fromPosition, toPosition);
                     SetObserveChanges(fromItemsSource, true);
                     SetObserveChanges(toItemsSource, true);
-                    itemsView.SendReorderCompleted();
                     return true;
                 }
             }
@@ -102,7 +101,6 @@ namespace ReorderableCollectionView.Forms
                 list.Insert(toPosition + offset, fromItem);
                 NotifyItemMoved(fromPosition, toPosition);
                 SetObserveChanges(itemsSource, true);
-                itemsView.SendReorderCompleted();
                 return true;
             }
             return false;
