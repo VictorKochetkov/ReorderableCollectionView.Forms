@@ -7,13 +7,15 @@ namespace ReorderableCollectionView.Forms
     public class SimpleItemTouchHelperCallback : ItemTouchHelper.Callback
     {
         Action _movementStarted;
+        Action _movementFinished;
         IItemTouchHelperAdapter _adapter;
 
         public override bool IsLongPressDragEnabled => true;
 
-        public SimpleItemTouchHelperCallback(Action movementStarted)
+        public SimpleItemTouchHelperCallback(Action movementStarted, Action movementFinished)
         {
             _movementStarted = movementStarted;
+            _movementFinished = movementFinished;
         }
 
         public override void OnSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState)
@@ -23,6 +25,10 @@ namespace ReorderableCollectionView.Forms
             if (actionState == ItemTouchHelper.ActionStateDrag)
             {
                 _movementStarted?.Invoke();
+            }
+            else if (actionState == ItemTouchHelper.ActionStateIdle)
+            {
+                _movementFinished?.Invoke();
             }
         }
 
