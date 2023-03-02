@@ -144,7 +144,9 @@ namespace ReorderableCollectionView.Forms
             {
                 if (_itemTouchHelperCallback == null)
                 {
-                    _itemTouchHelperCallback = new SimpleItemTouchHelperCallback(() => ItemsView?.SendReorderStarted());
+                    _itemTouchHelperCallback = new SimpleItemTouchHelperCallback(
+                        () => ItemsView?.SendReorderStarted(),
+                        () => ItemsView?.SendReorderCompleted());
                 }
                 if (_itemTouchHelper == null)
                 {
